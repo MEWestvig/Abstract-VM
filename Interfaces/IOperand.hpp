@@ -1,4 +1,5 @@
 #include "../enums/eOperandType.hpp"
+#include <string>
 
 class IOperand {
 public:
