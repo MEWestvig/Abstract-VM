@@ -1,3 +1,5 @@
+#include "../enums/eOperandType.hpp"
+
 class IOperand {
 public:
   virtual int getPrecision(void) const = 0;
@@ -11,5 +13,5 @@ public:
 
   virtual std::string const &toString(void) const = 0;
 
-  virtual -IOperand(void) {}
+  virtual ~IOperand(void) {}
 };

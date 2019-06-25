@@ -1,6 +1,6 @@
 NAME     := avm
 
-SRCS     := main.cpp
+SRCS     := src/main.cpp src/linkedList.cpp
 HDRS     := 
 OBJS     := $(SRCS:.cpp=.o)
 
