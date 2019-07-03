@@ -1,6 +1,6 @@
 NAME     := avm
 
-SRCS     := src/main.cpp src/linkedList.cpp
+SRCS     := src/main.cpp src/linkedList.cpp exceptions/MissingCommand.cpp
 HDRS     := 
 OBJS     := $(SRCS:.cpp=.o)
 

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "../includes/linkedList.hpp"
+#include "../includes/MissingCommand.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -21,6 +22,7 @@ int main(int argc, char const *argv[])
 				std::cout << line << '\n';
 				link->add(line);
 			}
+			std::cout << link->print(1) << std::endl;
 			link->print();
 			myfile.close();
 		}
@@ -29,7 +31,6 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
-
 		while (1)
 		{
 			std::cin >> instruction;
@@ -38,6 +39,17 @@ int main(int argc, char const *argv[])
 				break;
 			}
 			link->add(instruction);
+		}
+		try
+		{
+			if (link->print(0) != "end")
+			{
+				throw MissingCommand();
+			}
+		}
+		catch (MissingCommand &e)
+		{
+			std::cout << e.what() << std::endl;
 		}
 		link->print();
 	}

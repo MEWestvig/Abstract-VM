@@ -2,7 +2,7 @@
 
 linkedList::linkedList(void)
 {
-	this->length = 0;
+	this->size = 0;
 	this->head = NULL;
 }
 linkedList::~linkedList(void)
@@ -25,7 +25,7 @@ void linkedList::add(std::string str)
 	node->data = str;
 	node->next = this->head;
 	this->head = node;
-	this->length++;
+	this->size++;
 }
 void linkedList::print()
 {
@@ -46,17 +46,20 @@ void linkedList::remove(int n)
 std::string linkedList::print(int n)
 {
 	Node *head = this->head;
-	int i = 1;
+	int i = 0;
 	while (head)
 	{
 		if (i == n)
 		{
-			std::cout << i << ": " << head->data << std::endl;
 			return (head->data);
 		}
-
 		head = head->next;
 		i++;
 	}
 	return ("not found");
+}
+
+int linkedList::getSize()
+{
+	return size;
 }
