@@ -1,4 +1,4 @@
-#include "../includes/MissingCommand.hpp"
+#include "../includes/Exceptions.hpp"
 
 MissingCommand::MissingCommand()
 {
