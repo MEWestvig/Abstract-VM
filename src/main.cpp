@@ -3,6 +3,7 @@
 #include <string>
 #include "../includes/linkedList.hpp"
 #include "../includes/Exceptions.hpp"
+#include "../includes/Operands.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -14,20 +15,30 @@ int main(int argc, char const *argv[])
 	std::cout << "Start" << std::endl;
 	if (argc > 1)
 	{
-		myfile.open(argv[1]);
-		if (myfile.is_open())
+		try
 		{
-			while (getline(myfile, line))
+			myfile.open(argv[1]);
+			if (myfile.is_open())
 			{
-				std::cout << line << '\n';
-				link->add(line);
+				while (getline(myfile, line))
+				{
+					std::cout << line << '\n';
+					link->add(line);
+				}
+				std::cout << link->print(1) << std::endl;
+				link->print();
+				myfile.close();
 			}
-			std::cout << link->print(1) << std::endl;
-			link->print();
-			myfile.close();
+			else
+			{
+				throw MissingFile();
+			}
 		}
-		else
-			std::cout << "Unable to open file" << std::endl;
+		catch (MissingFile &e)
+		{
+			std::cout << e.what() << std::endl;
+			exit(0);
+		}
 	}
 	else
 	{
@@ -42,7 +53,7 @@ int main(int argc, char const *argv[])
 		}
 		try
 		{
-			if (link->print(0) != "end")
+			if (link->print(0) != "exit")
 			{
 				throw MissingCommand();
 			}

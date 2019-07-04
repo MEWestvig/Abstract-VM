@@ -1,14 +1,14 @@
 #include "../includes/Exceptions.hpp"
 
-AssertNotTrue::AssertNotTrue()
+UnderflowValue::UnderflowValue()
 {
 	return;
 }
-AssertNotTrue::~AssertNotTrue() throw()
+UnderflowValue::~UnderflowValue() throw()
 {
 	return;
 }
-char const *AssertNotTrue::AssertNotTrue::what() const throw()
+char const *UnderflowValue::UnderflowValue::what() const throw()
 {
 	return "Value is lower than the minimum for this data type.";
 }

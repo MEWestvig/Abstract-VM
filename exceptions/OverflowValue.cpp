@@ -1,14 +1,14 @@
 #include "../includes/Exceptions.hpp"
 
-AssertNotTrue::AssertNotTrue()
+OverflowValue::OverflowValue()
 {
 	return;
 }
-AssertNotTrue::~AssertNotTrue() throw()
+OverflowValue::~OverflowValue() throw()
 {
 	return;
 }
-char const *AssertNotTrue::AssertNotTrue::what() const throw()
+char const *OverflowValue::OverflowValue::what() const throw()
 {
 	return "Value exceeds the maximum for this data type.";
 }

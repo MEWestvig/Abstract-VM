@@ -1,14 +1,14 @@
 #include "../includes/Exceptions.hpp"
 
-AssertNotTrue::AssertNotTrue()
+PopOnEmptyStack::PopOnEmptyStack()
 {
 	return;
 }
-AssertNotTrue::~AssertNotTrue() throw()
+PopOnEmptyStack::~PopOnEmptyStack() throw()
 {
 	return;
 }
-char const *AssertNotTrue::AssertNotTrue::what() const throw()
+char const *PopOnEmptyStack::PopOnEmptyStack::what() const throw()
 {
 	return "Cannot pop a value off an empty stack!";
 }

@@ -1,6 +1,11 @@
 NAME     := avm
 
-SRCS     := src/main.cpp src/linkedList.cpp exceptions/MissingCommand.cpp
+SRCS     := src/main.cpp src/linkedList.cpp \
+			exceptions/MissingCommand.cpp exceptions/MissingFile.cpp \
+			exceptions/AssertNotTrue.cpp exceptions/DivisionModuloByZero.cpp \
+			exceptions/OverflowValue.cpp exceptions/UnderflowValue.cpp \
+			exceptions/PopOnEmptyStack.cpp exceptions/StackTooSmall.cpp \
+			exceptions/UnknownInstruction.cpp
 HDRS     := 
 OBJS     := $(SRCS:.cpp=.o)
 

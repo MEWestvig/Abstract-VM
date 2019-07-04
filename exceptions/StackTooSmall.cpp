@@ -1,14 +1,14 @@
 #include "../includes/Exceptions.hpp"
 
-AssertNotTrue::AssertNotTrue()
+StackTooSmall::StackTooSmall()
 {
 	return;
 }
-AssertNotTrue::~AssertNotTrue() throw()
+StackTooSmall::~StackTooSmall() throw()
 {
 	return;
 }
-char const *AssertNotTrue::AssertNotTrue::what() const throw()
+char const *StackTooSmall::StackTooSmall::what() const throw()
 {
 	return "Cannot perform this arithmetic operation on a stack of size less than 2!";
 }

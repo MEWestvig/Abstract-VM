@@ -1,14 +1,14 @@
 #include "../includes/Exceptions.hpp"
 
-AssertNotTrue::AssertNotTrue()
+UnknownInstruction::UnknownInstruction()
 {
 	return;
 }
-AssertNotTrue::~AssertNotTrue() throw()
+UnknownInstruction::~UnknownInstruction() throw()
 {
 	return;
 }
-char const *AssertNotTrue::AssertNotTrue::what() const throw()
+char const *UnknownInstruction::UnknownInstruction::what() const throw()
 {
 	return "Instruction does not exist or is spelt incorrectly.";
 }

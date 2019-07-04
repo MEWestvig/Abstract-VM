@@ -1,14 +1,14 @@
 #include "../includes/Exceptions.hpp"
 
-AssertNotTrue::AssertNotTrue()
+DivisionModuloByZero::DivisionModuloByZero()
 {
 	return;
 }
-AssertNotTrue::~AssertNotTrue() throw()
+DivisionModuloByZero::~DivisionModuloByZero() throw()
 {
 	return;
 }
-char const *AssertNotTrue::AssertNotTrue::what() const throw()
+char const *DivisionModuloByZero::DivisionModuloByZero::what() const throw()
 {
 	return "Cannot divide or modulo by 0!";
 }
