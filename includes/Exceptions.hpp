@@ -38,17 +38,29 @@ public:
 };
 class PopOnEmptyStack : public std::exception
 {
-
+public:
+	PopOnEmptyStack(void);
+	~PopOnEmptyStack(void) throw();
+	virtual char const *what() const throw();
 };
 class DivisionModuloByZero : public std::exception
 {
-
+public:
+	DivisionModuloByZero(void);
+	~DivisionModuloByZero(void) throw();
+	virtual char const *what() const throw();
 };
 class AssertNotTrue : public std::exception
 {
-
+public:
+	AssertNotTrue(void);
+	~AssertNotTrue(void) throw();
+	virtual char const *what() const throw();
 };
 class StackTooSmall : public std::exception
 {
-
+public:
+	StackTooSmall(void);
+	~StackTooSmall(void) throw();
+	virtual char const *what() const throw();
 };
