@@ -1,3 +1,6 @@
+#ifndef LINKEDLIST_HPP
+# define LINKEDLIST_HPP
+
 #include <iostream>
 #include <cstdlib>
 
@@ -24,3 +27,5 @@ private:
 	Node *head;
 	int size;
 };
+
+#endif

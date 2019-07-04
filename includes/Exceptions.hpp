@@ -1,3 +1,6 @@
+#ifndef EXCEPTIONS_HPP
+# define EXCEPTIONS_HPP
+
 #include <iostream>
 #include <exception>
 
@@ -64,3 +67,5 @@ public:
 	~StackTooSmall(void) throw();
 	virtual char const *what() const throw();
 };
+
+#endif

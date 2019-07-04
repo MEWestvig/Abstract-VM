@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "../includes/linkedList.hpp"
-#include "../includes/MissingCommand.hpp"
+#include "../includes/Exceptions.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -50,6 +50,7 @@ int main(int argc, char const *argv[])
 		catch (MissingCommand &e)
 		{
 			std::cout << e.what() << std::endl;
+			exit(0);
 		}
 		link->print();
 	}
