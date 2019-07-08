@@ -1,9 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "../includes/linkedList.hpp"
-#include "../includes/Exceptions.hpp"
-#include "../includes/Operands.hpp"
+#include "../includes/Includes.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -22,8 +17,11 @@ int main(int argc, char const *argv[])
 			{
 				while (getline(myfile, line))
 				{
-					std::cout << line << '\n';
-					link->add(line);
+					if (line[0] != ';')
+					{
+						std::cout << line << '\n';
+						link->add(line);
+					}
 				}
 				std::cout << link->print(1) << std::endl;
 				link->print();

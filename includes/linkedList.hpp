@@ -1,8 +1,7 @@
 #ifndef LINKEDLIST_HPP
 # define LINKEDLIST_HPP
 
-#include <iostream>
-#include <cstdlib>
+# include "Includes.hpp"
 
 class linkedList
 {

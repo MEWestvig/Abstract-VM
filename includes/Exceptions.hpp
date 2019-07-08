@@ -1,8 +1,7 @@
 #ifndef EXCEPTIONS_HPP
 # define EXCEPTIONS_HPP
 
-#include <iostream>
-#include <exception>
+# include "Includes.hpp"
 
 class MissingCommand : public std::exception
 {

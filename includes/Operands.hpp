@@ -1,7 +1,7 @@
 #ifndef OPERANDS_HPP
 # define OPERANDS_HPP
 
-#include "../interfaces/IOperand.hpp"
+# include "Includes.hpp"
 
 class Int8 : public IOperand
 {

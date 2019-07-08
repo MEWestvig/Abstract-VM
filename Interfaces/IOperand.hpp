@@ -1,18 +1,25 @@
-#include "../enums/eOperandType.hpp"
-#include <string>
+#ifndef IOPERAND_HPP
+# define IOPERAND_HPP
 
-class IOperand {
+# include "../includes/Includes.hpp"
+
+class IOperand
+{
 public:
-  virtual int getPrecision(void) const = 0;
-  virtual eOperandType getType(void) const = 0;
+	std::string StringValue;
 
-  virtual IOperand const * operator+(IOperand const &rhs) const = 0;
-  virtual IOperand const * operator-(IOperand const &rhs) const = 0;
-  virtual IOperand const * operator*(IOperand const &rhs) const = 0;
-  virtual IOperand const * operator/(IOperand const &rhs) const = 0;
-  virtual IOperand const * operator%(IOperand const &rhs) const = 0;
+	virtual int getPrecision(void) const = 0;
+	virtual eOperandType getType(void) const = 0;
 
-  virtual std::string const &toString(void) const = 0;
+	virtual IOperand const *operator+(IOperand const &rhs) const = 0;
+	virtual IOperand const *operator-(IOperand const &rhs) const = 0;
+	virtual IOperand const *operator*(IOperand const &rhs) const = 0;
+	virtual IOperand const *operator/(IOperand const &rhs) const = 0;
+	virtual IOperand const *operator%(IOperand const &rhs) const = 0;
 
-  virtual ~IOperand(void) {}
+	virtual std::string const &toString(void) const = 0;
+
+	virtual ~IOperand(void) {}
 };
+
+#endif
