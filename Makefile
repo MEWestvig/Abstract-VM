@@ -5,7 +5,9 @@ SRCS     := src/main.cpp src/linkedList.cpp \
 			exceptions/AssertNotTrue.cpp exceptions/DivisionModuloByZero.cpp \
 			exceptions/OverflowValue.cpp exceptions/UnderflowValue.cpp \
 			exceptions/PopOnEmptyStack.cpp exceptions/StackTooSmall.cpp \
-			exceptions/UnknownInstruction.cpp
+			exceptions/UnknownInstruction.cpp operands/Double.cpp \
+			operands/Float.cpp operands/Int8.cpp operands/Int16.cpp \
+			operands/Int32.cpp
 HDRS     := 
 OBJS     := $(SRCS:.cpp=.o)
 

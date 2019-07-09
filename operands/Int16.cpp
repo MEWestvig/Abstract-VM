@@ -1,5 +1,7 @@
 #include "../includes/Includes.hpp"
 
+Factory *f = new Factory();
+
 Int16::Int16(void)
 {
 	return;
@@ -39,11 +41,11 @@ IOperand const *Int16::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (Factory::createOperand(rhs.getType(), operandString.str()));
+		return (f->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (Factory::createOperand(this->getType(), operandString.str()));
+		return (f->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -61,11 +63,11 @@ IOperand const *Int16::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (Factory::createOperand(rhs.getType(), operandString.str()));
+		return (f->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (Factory::createOperand(this->getType(), operandString.str()));
+		return (f->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -83,11 +85,11 @@ IOperand const *Int16::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (Factory::createOperand(rhs.getType(), operandString.str()));
+		return (f->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (Factory::createOperand(this->getType(), operandString.str()));
+		return (f->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -105,11 +107,11 @@ IOperand const *Int16::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (Factory::createOperand(rhs.getType(), operandString.str()));
+		return (f->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (Factory::createOperand(this->getType(), operandString.str()));
+		return (f->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -127,11 +129,11 @@ IOperand const *Int16::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (Factory::createOperand(rhs.getType(), operandString.str()));
+		return (f->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (Factory::createOperand(this->getType(), operandString.str()));
+		return (f->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
