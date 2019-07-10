@@ -8,7 +8,8 @@ SRCS     := src/main.cpp src/linkedList.cpp \
 			exceptions/UnknownInstruction.cpp operands/Double.cpp \
 			operands/Float.cpp operands/Int8.cpp operands/Int16.cpp \
 			operands/Int32.cpp
-HDRS     := 
+HDRS     := enums/eOperandType.hpp includes/Exceptions.hpp includes/Factory.hpp \
+			includes/Includes.hpp includes/linkedList.hpp includes/Operands.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 CXX      := clang++

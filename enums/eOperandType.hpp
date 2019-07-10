@@ -1,8 +1,8 @@
 enum eOperandType
 {
-	Int8	= 1,
-	Int16	= 2,
-	Int32	= 3,
-	Float	= 4,
-	Double	= 5
+	Int8	= 0,
+	Int16	= 1,
+	Int32	= 2,
+	Float	= 3,
+	Double	= 4
 };

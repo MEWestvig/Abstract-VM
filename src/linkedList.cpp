@@ -1,4 +1,4 @@
-#include "../includes/Includes.hpp"
+#include "../includes/linkedList.hpp"
 
 linkedList::linkedList(void)
 {

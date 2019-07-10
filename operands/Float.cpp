@@ -1,4 +1,4 @@
-#include "../includes/Includes.hpp"
+#include "../includes/Operands.hpp"
 
 Factory *f = new Factory();
 
@@ -8,6 +8,7 @@ Float::Float(void)
 }
 Float::Float(Float const &src)
 {
+	*this = src;
 	return;
 }
 Float::~Float(void)

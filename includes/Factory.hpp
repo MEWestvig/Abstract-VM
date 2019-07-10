@@ -16,6 +16,8 @@ public:
 	Factory();
 	~Factory();
 	IOperand const *createOperand(eOperandType type, std::string const &value) const;
+	typedef IOperand const *(Factory::*OperandFunctions)(std::string const & value) const;
+	OperandFunctions OperandFt[5];
 };
 
 #endif

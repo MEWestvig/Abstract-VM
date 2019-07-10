@@ -6,8 +6,12 @@ int main(int argc, char const *argv[])
 	std::string line;
 	std::string instruction;
 	linkedList *link = new linkedList;
+	Factory *f = new Factory();
+	IOperand const *Testing;
 
 	std::cout << "Start" << std::endl;
+	Testing = f->createOperand(::Int8, "15");
+	std::cout << Testing->toString() << std::endl;
 	if (argc > 1)
 	{
 		try

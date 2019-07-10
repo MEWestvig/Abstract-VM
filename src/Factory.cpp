@@ -1,13 +1,12 @@
-#include "../includes/Includes.hpp"
+#include "../includes/Factory.hpp"
 
 Factory::Factory()
 {
-	// OperandFt[0] = &IOperandController::createInt8;
-	// OperandFt[1] = &IOperandController::createInt16;
-	// OperandFt[2] = &IOperandController::createInt32;
-	// OperandFt[3] = &IOperandController::createFloat;
-	// OperandFt[4] = &IOperandController::createDouble;
-	// std::cout << KGRN "IOperandController factory initialized" KRESET << std::endl;
+	OperandFt[0] = &Factory::createInt8;
+	OperandFt[1] = &Factory::createInt16;
+	OperandFt[2] = &Factory::createInt32;
+	OperandFt[3] = &Factory::createFloat;
+	OperandFt[4] = &Factory::createDouble;
 }
 
 Factory::~Factory()
@@ -142,7 +141,7 @@ IOperand const *Factory::createDouble(std::string const &value) const
 IOperand const *Factory::createOperand(eOperandType type, std::string const &value) const
 {
 	std::cout << value << std::endl;
-	IOperand const *RetOperand = (this->Factory::createInt8)(value);
+	IOperand const *RetOperand = (*this.*OperandFt[type])(value);
 	std::cout << RetOperand->toString();
 	return (RetOperand);
 }

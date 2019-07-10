@@ -1,4 +1,4 @@
-#include "../includes/Includes.hpp"
+#include "../includes/Operands.hpp"
 
 Factory *f = new Factory();
 
@@ -8,6 +8,7 @@ Int8::Int8(void)
 }
 Int8::Int8(Int8 const &src)
 {
+	*this = src;
 	return;
 }
 Int8::~Int8(void)

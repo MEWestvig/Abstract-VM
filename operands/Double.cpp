@@ -1,4 +1,4 @@
-#include "../includes/Includes.hpp"
+#include "../includes/Operands.hpp"
 
 Factory *f = new Factory();
 
@@ -8,6 +8,7 @@ Double::Double(void)
 }
 Double::Double(Double const &src)
 {
+	*this = src;
 	return;
 }
 Double::~Double(void)
