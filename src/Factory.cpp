@@ -142,6 +142,6 @@ IOperand const *Factory::createOperand(eOperandType type, std::string const &val
 {
 	std::cout << value << std::endl;
 	IOperand const *RetOperand = (*this.*OperandFt[type])(value);
-	std::cout << RetOperand->toString();
+	std::cout << RetOperand;
 	return (RetOperand);
 }

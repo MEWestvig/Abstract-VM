@@ -1,6 +1,7 @@
+#include "../includes/Factory.hpp"
 #include "../includes/Includes.hpp"
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	std::ifstream myfile;
 	std::string line;
@@ -11,7 +12,7 @@ int main(int argc, char const *argv[])
 
 	std::cout << "Start" << std::endl;
 	Testing = f->createOperand(::Int8, "15");
-	std::cout << Testing->toString() << std::endl;
+	// std::cout << Testing->toString() << std::endl;
 	if (argc > 1)
 	{
 		try

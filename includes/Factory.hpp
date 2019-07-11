@@ -1,7 +1,7 @@
 #ifndef FACTORY_HPP
-#define FACTORY_HPP
+# define FACTORY_HPP
 
-#include "Includes.hpp"
+# include "Includes.hpp"
 
 class Factory
 {
@@ -16,7 +16,7 @@ public:
 	Factory();
 	~Factory();
 	IOperand const *createOperand(eOperandType type, std::string const &value) const;
-	typedef IOperand const *(Factory::*OperandFunctions)(std::string const & value) const;
+	typedef IOperand const *(Factory::*OperandFunctions)(std::string const &value) const;
 	OperandFunctions OperandFt[5];
 };
 

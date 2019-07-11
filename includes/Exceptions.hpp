@@ -66,5 +66,12 @@ public:
 	~StackTooSmall(void) throw();
 	virtual char const *what() const throw();
 };
+class NaN : public std::exception
+{
+public:
+	NaN(void);
+	~NaN(void) throw();
+	virtual char const *what() const throw();
+};
 
 #endif

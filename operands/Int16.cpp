@@ -6,11 +6,6 @@ Int16::Int16(void)
 {
 	return;
 }
-Int16::Int16(Int16 const &src)
-{
-	*this = src;
-	return;
-}
 Int16::~Int16(void)
 {
 	return;

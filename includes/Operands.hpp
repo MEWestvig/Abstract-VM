@@ -1,5 +1,5 @@
 #ifndef OPERANDS_HPP
-#define OPERANDS_HPP
+# define OPERANDS_HPP
 
 #include "Includes.hpp"
 
@@ -18,8 +18,7 @@ public:
 	std::string const &toString(void) const;
 
 	Int8(void);
-	Int8(Int8 const &src);
-	Int8 &operator=(Int8 const &rhs);
+	class Int8 &operator=(Int8 const &rhs);
 	~Int8(void);
 };
 
@@ -38,8 +37,7 @@ public:
 	std::string const &toString(void) const;
 
 	Int16(void);
-	Int16(Int16 const &src);
-	Int16 &operator=(Int16 const &rhs);
+	class Int16 &operator=(Int16 const &rhs);
 	~Int16(void);
 };
 
@@ -58,8 +56,7 @@ public:
 	std::string const &toString(void) const;
 
 	Int32(void);
-	Int32(Int32 const &src);
-	Int32 &operator=(Int32 const &rhs);
+	class Int32 &operator=(Int32 const &rhs);
 	~Int32(void);
 };
 
@@ -78,8 +75,7 @@ public:
 	std::string const &toString(void) const;
 
 	Float(void);
-	Float(Float const &src);
-	Float &operator=(Float const &rhs);
+	class Float &operator=(Float const &rhs);
 	~Float(void);
 };
 
@@ -98,8 +94,7 @@ public:
 	std::string const &toString(void) const;
 
 	Double(void);
-	Double(Double const &src);
-	Double &operator=(Double const &rhs);
+	class Double &operator=(Double const &rhs);
 	~Double(void);
 };
 

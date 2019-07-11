@@ -1,14 +1,9 @@
 #include "../includes/Operands.hpp"
 
-Factory *f = new Factory();
+Factory *fail = new Factory();
 
 Double::Double(void)
 {
-	return;
-}
-Double::Double(Double const &src)
-{
-	*this = src;
 	return;
 }
 Double::~Double(void)
@@ -42,11 +37,11 @@ IOperand const *Double::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fail->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fail->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -64,11 +59,11 @@ IOperand const *Double::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fail->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fail->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -86,11 +81,11 @@ IOperand const *Double::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fail->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fail->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -108,11 +103,11 @@ IOperand const *Double::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fail->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fail->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -130,11 +125,11 @@ IOperand const *Double::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fail->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fail->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }

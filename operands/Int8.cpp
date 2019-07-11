@@ -1,14 +1,9 @@
 #include "../includes/Operands.hpp"
 
-Factory *f = new Factory();
+Factory *fai = new Factory();
 
 Int8::Int8(void)
 {
-	return;
-}
-Int8::Int8(Int8 const &src)
-{
-	*this = src;
 	return;
 }
 Int8::~Int8(void)
@@ -42,11 +37,11 @@ IOperand const *Int8::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fai->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fai->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -64,11 +59,11 @@ IOperand const *Int8::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fai->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fai->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -86,11 +81,11 @@ IOperand const *Int8::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fai->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fai->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -108,11 +103,11 @@ IOperand const *Int8::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fai->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fai->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -130,11 +125,11 @@ IOperand const *Int8::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fai->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fai->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }

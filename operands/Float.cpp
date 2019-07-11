@@ -1,14 +1,9 @@
 #include "../includes/Operands.hpp"
 
-Factory *f = new Factory();
+Factory *fa = new Factory();
 
 Float::Float(void)
 {
-	return;
-}
-Float::Float(Float const &src)
-{
-	*this = src;
 	return;
 }
 Float::~Float(void)
@@ -42,11 +37,11 @@ IOperand const *Float::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fa->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fa->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -64,11 +59,11 @@ IOperand const *Float::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fa->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fa->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -86,11 +81,11 @@ IOperand const *Float::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fa->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fa->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -108,11 +103,11 @@ IOperand const *Float::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fa->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fa->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -130,11 +125,11 @@ IOperand const *Float::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (fa->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (fa->createOperand(this->getType(), operandString.str()));
 	}
 	return (ret);
 }

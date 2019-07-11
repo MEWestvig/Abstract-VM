@@ -10,12 +10,13 @@
 # include <cstdlib>
 # include <cmath>
 # include <limits>
+# include <cstdint>
 
 # include "../enums/eOperandType.hpp"
 # include "../interfaces/IOperand.hpp"
-# include "Exceptions.hpp"
-# include "Factory.hpp"
-# include "linkedList.hpp"
 # include "Operands.hpp"
+# include "Exceptions.hpp"
+# include "linkedList.hpp"
+# include "Factory.hpp"
 
 #endif
