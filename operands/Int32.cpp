@@ -1,6 +1,6 @@
 #include "../includes/Operands.hpp"
 
-Factory *fails = new Factory();
+Factory *int32Fact = new Factory();
 
 Int32::Int32(void)
 {
@@ -37,11 +37,11 @@ IOperand const *Int32::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fails->createOperand(rhs.getType(), operandString.str()));
+		return (int32Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fails->createOperand(this->getType(), operandString.str()));
+		return (int32Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -59,11 +59,11 @@ IOperand const *Int32::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fails->createOperand(rhs.getType(), operandString.str()));
+		return (int32Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fails->createOperand(this->getType(), operandString.str()));
+		return (int32Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -81,11 +81,11 @@ IOperand const *Int32::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fails->createOperand(rhs.getType(), operandString.str()));
+		return (int32Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fails->createOperand(this->getType(), operandString.str()));
+		return (int32Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -103,11 +103,11 @@ IOperand const *Int32::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fails->createOperand(rhs.getType(), operandString.str()));
+		return (int32Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fails->createOperand(this->getType(), operandString.str()));
+		return (int32Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -125,11 +125,11 @@ IOperand const *Int32::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fails->createOperand(rhs.getType(), operandString.str()));
+		return (int32Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fails->createOperand(this->getType(), operandString.str()));
+		return (int32Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }

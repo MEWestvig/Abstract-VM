@@ -1,6 +1,6 @@
 #include "../includes/Operands.hpp"
 
-Factory *fai = new Factory();
+Factory *int8Fact = new Factory();
 
 Int8::Int8(void)
 {
@@ -37,11 +37,11 @@ IOperand const *Int8::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fai->createOperand(rhs.getType(), operandString.str()));
+		return (int8Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fai->createOperand(this->getType(), operandString.str()));
+		return (int8Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -59,11 +59,11 @@ IOperand const *Int8::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fai->createOperand(rhs.getType(), operandString.str()));
+		return (int8Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fai->createOperand(this->getType(), operandString.str()));
+		return (int8Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -81,11 +81,11 @@ IOperand const *Int8::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fai->createOperand(rhs.getType(), operandString.str()));
+		return (int8Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fai->createOperand(this->getType(), operandString.str()));
+		return (int8Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -103,11 +103,11 @@ IOperand const *Int8::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fai->createOperand(rhs.getType(), operandString.str()));
+		return (int8Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fai->createOperand(this->getType(), operandString.str()));
+		return (int8Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -125,11 +125,11 @@ IOperand const *Int8::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (fai->createOperand(rhs.getType(), operandString.str()));
+		return (int8Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (fai->createOperand(this->getType(), operandString.str()));
+		return (int8Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }

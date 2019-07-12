@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
 	std::cout << "Start" << std::endl;
 	Testing = f->createOperand(::Int8, "15");
-	// std::cout << Testing->toString() << std::endl;
+	std::cout << Testing->toString() << std::endl;
 	if (argc > 1)
 	{
 		try

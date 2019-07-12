@@ -1,6 +1,6 @@
 #include "../includes/Operands.hpp"
 
-Factory *f = new Factory();
+Factory *int16Fact = new Factory();
 
 Int16::Int16(void)
 {
@@ -37,11 +37,11 @@ IOperand const *Int16::operator+(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (int16Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (int16Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -59,11 +59,11 @@ IOperand const *Int16::operator-(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (int16Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (int16Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -81,11 +81,11 @@ IOperand const *Int16::operator*(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (int16Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (int16Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -103,11 +103,11 @@ IOperand const *Int16::operator/(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (int16Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (int16Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
@@ -125,11 +125,11 @@ IOperand const *Int16::operator%(IOperand const &rhs) const
 	operandString << result;
 	if (getType() < rhs.getType())
 	{
-		return (f->createOperand(rhs.getType(), operandString.str()));
+		return (int16Fact->createOperand(rhs.getType(), operandString.str()));
 	}
 	else
 	{
-		return (f->createOperand(this->getType(), operandString.str()));
+		return (int16Fact->createOperand(getType(), operandString.str()));
 	}
 	return (ret);
 }
