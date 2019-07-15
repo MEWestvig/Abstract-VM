@@ -17,7 +17,7 @@ class Float &Float::operator=(Float const &rhs)
 }
 int Float::getPrecision(void) const
 {
-	return (1);
+	return (6);
 }
 eOperandType Float::getType(void) const
 {

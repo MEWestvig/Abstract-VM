@@ -1,6 +1,6 @@
 NAME     := avm
 
-SRCS     := src/main.cpp src/linkedList.cpp src/Factory.cpp \
+SRCS     := src/main.cpp src/linkedList.cpp src/Factory.cpp src/stackList.cpp \
 			exceptions/MissingCommand.cpp exceptions/MissingFile.cpp \
 			exceptions/AssertNotTrue.cpp exceptions/DivisionModuloByZero.cpp \
 			exceptions/OverflowValue.cpp exceptions/UnderflowValue.cpp \
@@ -9,7 +9,8 @@ SRCS     := src/main.cpp src/linkedList.cpp src/Factory.cpp \
 			operands/Double.cpp operands/Float.cpp operands/Int8.cpp \
 			operands/Int16.cpp operands/Int32.cpp
 HDRS     := enums/eOperandType.hpp includes/Exceptions.hpp includes/Factory.hpp \
-			includes/Includes.hpp includes/linkedList.hpp includes/Operands.hpp
+			includes/Includes.hpp includes/linkedList.hpp includes/Operands.hpp \
+			includes/stackList.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 CXX      := clang++

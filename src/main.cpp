@@ -1,4 +1,3 @@
-#include "../includes/Factory.hpp"
 #include "../includes/Includes.hpp"
 
 int main(int argc, char *argv[])
@@ -7,12 +6,14 @@ int main(int argc, char *argv[])
 	std::string line;
 	std::string instruction;
 	linkedList *link = new linkedList;
+	stackList *test = new stackList;
 	Factory *f = new Factory();
 	IOperand const *Testing;
 
 	std::cout << "Start" << std::endl;
-	Testing = f->createOperand(::Int8, "15");
-	std::cout << Testing->toString() << std::endl;
+	Testing = f->createOperand(::Int8, "15.1");
+	test->add(*Testing);
+	test->print();
 	if (argc > 1)
 	{
 		try

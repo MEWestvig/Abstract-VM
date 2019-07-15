@@ -17,6 +17,7 @@
 # include "Operands.hpp"
 # include "Exceptions.hpp"
 # include "linkedList.hpp"
+# include "stackList.hpp"
 # include "Factory.hpp"
 
 #endif

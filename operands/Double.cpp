@@ -17,7 +17,7 @@ class Double &Double::operator=(Double const &rhs)
 }
 int Double::getPrecision(void) const
 {
-	return (1);
+	return (15);
 }
 eOperandType Double::getType(void) const
 {

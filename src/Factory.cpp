@@ -94,7 +94,7 @@ IOperand const *Factory::createFloat(std::string const &value) const
 	char *failed;
 	try
 	{
-		int64_t num = std::strtod(value.c_str(), &failed);
+		float num = std::strtod(value.c_str(), &failed);
 		if (*failed)
 		{
 			std::cout << "throw" << std::endl;
@@ -119,7 +119,7 @@ IOperand const *Factory::createDouble(std::string const &value) const
 	char *failed;
 	try
 	{
-		int64_t num = std::strtod(value.c_str(), &failed);
+		double num = std::strtod(value.c_str(), &failed);
 		if (*failed)
 		{
 			std::cout << "throw" << std::endl;
@@ -140,8 +140,6 @@ IOperand const *Factory::createDouble(std::string const &value) const
 
 IOperand const *Factory::createOperand(eOperandType type, std::string const &value) const
 {
-	std::cout << value << std::endl;
 	IOperand const *RetOperand = (*this.*OperandFt[type])(value);
-	std::cout << RetOperand;
 	return (RetOperand);
 }
