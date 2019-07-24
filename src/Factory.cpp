@@ -2,7 +2,7 @@
 
 Factory::Factory()
 {
-    OperandFt[0] = &Factory::createInt8;
+	OperandFt[0] = &Factory::createInt8;
 	OperandFt[1] = &Factory::createInt16;
 	OperandFt[2] = &Factory::createInt32;
 	OperandFt[3] = &Factory::createFloat;
@@ -15,7 +15,7 @@ Factory::~Factory()
 
 IOperand const *Factory::createInt8(std::string const &value) const
 {
-    class Int8 *retOperand = new class Int8();
+	class Int8 *retOperand = new class Int8();
 	char *failed;
 	try
 	{
@@ -24,14 +24,14 @@ IOperand const *Factory::createInt8(std::string const &value) const
 		{
 			throw NaN();
 		}
-		if ( num > std::numeric_limits<int8_t>::max())
-            throw OverflowValue();
-		if ( num < std::numeric_limits<int8_t>::min())
-            throw UnderflowValue();
+		if (num > std::numeric_limits<int8_t>::max())
+			throw OverflowValue();
+		if (num < std::numeric_limits<int8_t>::min())
+			throw UnderflowValue();
 		retOperand->StringValue = std::to_string(num);
 		return (retOperand);
 	}
-	catch (const std::exception & x)
+	catch (const std::exception &x)
 	{
 		std::cout << "\033[1;31m" << x.what() << "\x1B[0m" << std::endl;
 		exit(0);
@@ -101,7 +101,7 @@ IOperand const *Factory::createFloat(std::string const &value) const
 		}
 		if (num > std::numeric_limits<float>::max())
 			throw OverflowValue();
-		if (num < std::numeric_limits<float>::min())
+		if (num < -std::numeric_limits<float>::max())
 			throw UnderflowValue();
 		retOperand->StringValue = std::to_string(num);
 		return (retOperand);
@@ -136,7 +136,7 @@ IOperand const *Factory::createDouble(std::string const &value) const
 	}
 }
 
-IOperand const * Factory::createOperand(eOperandType type, std::string const & value ) const
+IOperand const *Factory::createOperand(eOperandType type, std::string const &value) const
 {
 	IOperand const *RetOperand = (*this.*OperandFt[type])(value);
 	return (RetOperand);

@@ -1,0 +1,6 @@
+push float(-100)
+push int8(9)
+
+div
+dump
+exit

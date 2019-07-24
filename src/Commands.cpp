@@ -41,7 +41,8 @@ void Commands::Check_input(std::string command)
     else if (std::regex_search(command, asserted))
         Commands::Assert(command);
     else if ((std::regex_search(command, comment)) || (std::regex_search(command, skip)))
-        std::cout << "skip yay" << std::endl;
+    {
+    }
     else
     {
         try
@@ -203,18 +204,21 @@ void Commands::Mul()
 
 void Commands::Div()
 {
+    IOperand const *num1 = this->stack->head->data;
+    IOperand const *num2 = this->stack->head->next->data;
     try
     {
         if (this->stack->getSize() < 2)
             throw StackTooSmall();
+        if (std::strtod(num2->toString().c_str(), NULL) == 0)
+            throw DivisionModuloByZero();
     }
     catch (const std::exception &e)
     {
         std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
         exit(0);
     }
-    IOperand const *num1 = this->stack->head->data;
-    IOperand const *num2 = this->stack->head->next->data;
+
     IOperand const *retVal = *num1 / *num2;
     this->stack->remove();
     this->stack->remove();
@@ -223,18 +227,20 @@ void Commands::Div()
 
 void Commands::Mod()
 {
+    IOperand const *num1 = this->stack->head->data;
+    IOperand const *num2 = this->stack->head->next->data;
     try
     {
         if (this->stack->getSize() < 2)
             throw StackTooSmall();
+        if (std::strtod(num2->toString().c_str(), NULL) == 0)
+            throw DivisionModuloByZero();
     }
     catch (const std::exception &e)
     {
         std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
         exit(0);
     }
-    IOperand const *num1 = this->stack->head->data;
-    IOperand const *num2 = this->stack->head->next->data;
     IOperand const *retVal = *num1 % *num2;
     this->stack->remove();
     this->stack->remove();
@@ -247,20 +253,21 @@ void Commands::Print()
     {
         if (this->stack->getSize() < 1)
             throw StackWayTooSmall();
+
+        IOperand const *num1 = this->stack->head->data;
+        if (num1->getType() == eOperandType::Int8)
+        {
+            uint8_t name = std::stod(num1->toString());
+            std::cout << name << std::endl;
+        }
+        else
+            throw AssertNotTrue();
     }
     catch (const std::exception &e)
     {
         std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
         exit(0);
     }
-    IOperand const *num1 = this->stack->head->data;
-    if (num1->getType() == eOperandType::Int8)
-    {
-        uint8_t name = std::stod(num1->toString());
-        std::cout << name << std::endl;
-    }
-    else
-        std::cout << "err";
 }
 
 void Commands::Dump()

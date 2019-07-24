@@ -24,9 +24,7 @@ int main(int argc, char *argv[])
         if (myfile.is_open())
         {
             while (getline(myfile, line))
-            {
                 link->add(line);
-            }
             link->add(line);
             do_instructions(link, c);
             myfile.close();
@@ -45,6 +43,16 @@ int main(int argc, char *argv[])
         }
         link->add(line);
         do_instructions(link, c);
+    }
+    try
+    {
+        if (link->print(0) != "exit")
+            throw MissingCommand();
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
+        exit(0);
     }
     return 0;
 }
