@@ -19,12 +19,12 @@ public:
 	stackList &operator=(stackList const &rhs);
 	void add(IOperand const &in);
 	void print();
-	void remove(int n);
+	void remove();
 	IOperand const *print(int n);
 	int getSize();
+	Node *head;
 
 private:
-	Node *head;
 	int size;
 };
 

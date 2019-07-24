@@ -2,18 +2,17 @@
 # define INCLUDES_HPP
 
 # include <iostream>
-# include <exception>
-# include <string>
-# include <iomanip>
-# include <fstream>
-# include <sstream>
-# include <cstdlib>
-# include <cmath>
-# include <limits>
 # include <cstdint>
+# include <limits>
+# include <cstdlib>
+# include <string>
+# include <sstream>
+# include <cmath>
+# include <regex>
+# include <fstream>
 
 # include "../enums/eOperandType.hpp"
-# include "../interfaces/IOperand.hpp"
+# include "../Interfaces/IOperand.hpp"
 # include "Operands.hpp"
 # include "Exceptions.hpp"
 # include "linkedList.hpp"

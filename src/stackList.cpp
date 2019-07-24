@@ -33,14 +33,17 @@ void stackList::print()
 	int i = 1;
 	while (head)
 	{
-		std::cout << i << ": " << head->data->toString() << std::endl;
+		std::cout << head->data->toString() << std::endl;
 		head = head->next;
 		i++;
 	}
 }
-void stackList::remove(int n)
+void stackList::remove()
 {
-	std::cout << n << std::endl;
+	Node *deleted = this->head;
+	delete (deleted->data);
+	this->head = this->head->next;
+	deleted->next = NULL;
 	return;
 }
 IOperand const *stackList::print(int n)

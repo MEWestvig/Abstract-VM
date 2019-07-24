@@ -1,73 +1,50 @@
-#include "../includes/Includes.hpp"
+#include "../includes/includes.hpp"
+#include "../includes/Commands.hpp"
+
+void do_instructions(linkedList *link, Commands *c)
+{
+    for (int i = link->getSize() - 1; i > 0; i--)
+    {
+        c->Check_input(link->print(i));
+    }
+}
 
 int main(int argc, char *argv[])
 {
-	std::ifstream myfile;
-	std::string line;
-	std::string instruction;
-	linkedList *link = new linkedList;
-	stackList *test = new stackList;
-	Factory *f = new Factory();
-	IOperand const *Testing;
+    std::ifstream myfile;
+    std::string line;
+    std::string instruction;
+    linkedList *link = new linkedList;
+    stackList *stack = new stackList;
+    Commands *c = new Commands(*stack);
 
-	std::cout << "Start" << std::endl;
-	Testing = f->createOperand(::Int8, "15.1");
-	test->add(*Testing);
-	test->print();
-	if (argc > 1)
-	{
-		try
-		{
-			myfile.open(argv[1]);
-			if (myfile.is_open())
-			{
-				while (getline(myfile, line))
-				{
-					if (line[0] != ';')
-					{
-						std::cout << line << '\n';
-						link->add(line);
-					}
-				}
-				std::cout << link->print(1) << std::endl;
-				link->print();
-				myfile.close();
-			}
-			else
-			{
-				throw MissingFile();
-			}
-		}
-		catch (MissingFile &e)
-		{
-			std::cout << e.what() << std::endl;
-			exit(0);
-		}
-	}
-	else
-	{
-		while (1)
-		{
-			std::cin >> instruction;
-			if (instruction == ";;")
-			{
-				break;
-			}
-			link->add(instruction);
-		}
-		try
-		{
-			if (link->print(0) != "exit")
-			{
-				throw MissingCommand();
-			}
-		}
-		catch (MissingCommand &e)
-		{
-			std::cout << e.what() << std::endl;
-			exit(0);
-		}
-		link->print();
-	}
-	return 0;
+    if (argc > 1)
+    {
+        myfile.open(argv[1]);
+        if (myfile.is_open())
+        {
+            while (getline(myfile, line))
+            {
+                link->add(line);
+            }
+            link->add(line);
+            do_instructions(link, c);
+            myfile.close();
+        }
+        else
+            std::cout << "Unable to open file" << std::endl;
+    }
+    else
+    {
+        while (1)
+        {
+            getline(std::cin, instruction);
+            if (instruction == ";;")
+                break;
+            link->add(instruction);
+        }
+        link->add(line);
+        do_instructions(link, c);
+    }
+    return 0;
 }
