@@ -44,6 +44,7 @@ void stackList::remove()
 	delete (deleted->data);
 	this->head = this->head->next;
 	deleted->next = NULL;
+	size--;
 	return;
 }
 IOperand const *stackList::print(int n)

@@ -1,4 +1,4 @@
-#include "../includes/includes.hpp"
+#include "../includes/Includes.hpp"
 #include "../includes/Commands.hpp"
 
 void do_instructions(linkedList *link, Commands *c)
