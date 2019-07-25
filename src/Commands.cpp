@@ -18,7 +18,7 @@ void Commands::Check_input(std::string command)
     std::regex mod("^(mod)( *$ *| *;$| *;.*$)");
     std::regex dump("^(dump)( *$ *| *;$| *;.*$)");
     std::regex print("^(print)( *$ *| *;$| *;.*$)");
-    std::regex skip("^(\\n| *|exit)( *$ *| *;$| *;.*$)");
+    std::regex skip("^(\\n| *)( *$ *| *;$| *;.*$)");
     std::regex comment("^\\;.*$");
     if (std::regex_search(command, push))
         Commands::Push(command);
@@ -204,47 +204,46 @@ void Commands::Mul()
 
 void Commands::Div()
 {
-    IOperand const *num1 = this->stack->head->data;
-    IOperand const *num2 = this->stack->head->next->data;
     try
     {
         if (this->stack->getSize() < 2)
             throw StackTooSmall();
+        IOperand const *num1 = this->stack->head->data;
+        IOperand const *num2 = this->stack->head->next->data;
         if (std::strtod(num2->toString().c_str(), NULL) == 0)
             throw DivisionModuloByZero();
+        IOperand const *retVal = *num1 / *num2;
+        this->stack->remove();
+        this->stack->remove();
+        this->stack->add(*retVal);
     }
     catch (const std::exception &e)
     {
         std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
         exit(0);
     }
-
-    IOperand const *retVal = *num1 / *num2;
-    this->stack->remove();
-    this->stack->remove();
-    this->stack->add(*retVal);
 }
 
 void Commands::Mod()
 {
-    IOperand const *num1 = this->stack->head->data;
-    IOperand const *num2 = this->stack->head->next->data;
     try
     {
         if (this->stack->getSize() < 2)
             throw StackTooSmall();
+        IOperand const *num1 = this->stack->head->data;
+        IOperand const *num2 = this->stack->head->next->data;
         if (std::strtod(num2->toString().c_str(), NULL) == 0)
             throw DivisionModuloByZero();
+        IOperand const *retVal = *num1 % *num2;
+        this->stack->remove();
+        this->stack->remove();
+        this->stack->add(*retVal);
     }
     catch (const std::exception &e)
     {
         std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
         exit(0);
     }
-    IOperand const *retVal = *num1 % *num2;
-    this->stack->remove();
-    this->stack->remove();
-    this->stack->add(*retVal);
 }
 
 void Commands::Print()

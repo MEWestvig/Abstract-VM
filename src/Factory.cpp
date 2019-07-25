@@ -138,6 +138,18 @@ IOperand const *Factory::createDouble(std::string const &value) const
 
 IOperand const *Factory::createOperand(eOperandType type, std::string const &value) const
 {
+	try
+	{
+		if (std::strtod(value.c_str(), NULL) > std::numeric_limits<int64_t>::max())
+			throw OverflowValue();
+		if (std::strtod(value.c_str(), NULL) < std::numeric_limits<int64_t>::min())
+			throw UnderflowValue();
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
+		exit(0);
+	}
 	IOperand const *RetOperand = (*this.*OperandFt[type])(value);
 	return (RetOperand);
 }

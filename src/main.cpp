@@ -3,9 +3,21 @@
 
 void do_instructions(linkedList *link, Commands *c)
 {
+    std::regex close("^exit( *$ *| *;$| *;.*$)");
     for (int i = link->getSize() - 1; i > 0; i--)
     {
+        if (std::regex_search(link->print(i), close))
+            exit(0);
         c->Check_input(link->print(i));
+    }
+    try
+    {
+        throw MissingCommand();
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
+        exit(0);
     }
 }
 
@@ -34,6 +46,7 @@ int main(int argc, char *argv[])
     }
     else
     {
+
         while (1)
         {
             getline(std::cin, instruction);
@@ -43,16 +56,6 @@ int main(int argc, char *argv[])
         }
         link->add(line);
         do_instructions(link, c);
-    }
-    try
-    {
-        if (link->print(0) != "exit")
-            throw MissingCommand();
-    }
-    catch (const std::exception &e)
-    {
-        std::cout << "\033[1;31m" << e.what() << "\x1B[0m" << std::endl;
-        exit(0);
     }
     return 0;
 }
